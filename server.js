@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
+
 // Définition du chemin vers le fichier index.html
 const indexPath = path.join(__dirname, 'index.html');
 
@@ -10,8 +11,12 @@ app.get('/', (req, res) => {
     res.sendFile(indexPath);
 });
 
-app.get('/come.html', (req, res) => {
+app.get('/come', (req, res) => {
     res.sendFile(path.join(__dirname, 'come.html'));
+});
+
+app.get('/accomodation', (req, res) => {
+    res.sendFile(path.join(__dirname, 'accomodation.html'));
 });
 
 // Utiliser express.static pour servir les fichiers statiques
